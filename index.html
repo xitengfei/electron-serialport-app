@@ -86,25 +86,24 @@
     $('.receive-windows').text(`打开串口: ${COM}, 波特率: ${BaudRate}`);
     $('.receive-windows').append('<br/>=======================================<br/>');
 
-    // port.removeAllListeners();	//清除所有监听器
     port.on('data', function (data) {
       console.log('Receive Data:', data)	// data为监听到的内容，即下位机返回的数据
     });
   });
+  
   // 点击发送信息
   $('.btn-send').click(() => {
     var sendData = $('.input-send-data').val();
     if (port != {} && port != null) {
-      console.log(`SendData: ${sendData}`);
-
       port.write(sendData, function (error) {
         if (error) {
           console.log("发送指令失败");
         } else {
           console.log("发送指令成功");
-          // 此处可以写监听器部分，监听下位机的返回内容
         }
-      })
+      });
+
+      
     }
   })
   // 清空信息

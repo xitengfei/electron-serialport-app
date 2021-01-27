@@ -1,0 +1,21 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.2.0",
+    "electron-packager": "^15.2.0",
+    "electron-rebuild": "^1.8.4"
+  },
+  "dependencies": {
+    "serialport": "^9.0.6"
+  }
+}
